@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1462829428 source:d:\git\c++\csg_project\main.cpp
+	<iostream>
+	"Circle.h"
+	"Position.h"
+	"Square.h"
+	"ComplexShape.h"
+	"Operation.h"
+
+1462715677 source:d:\git\c++\csg_project\src\operation.cpp
+	"Operation.h"
+
+1462809686 d:\git\c++\csg_project\include\operation.h
+
+1462829403 source:d:\git\c++\csg_project\src\shape.cpp
+	"Shape.h"
+	"ComplexShape.h"
+
+1462829419 d:\git\c++\csg_project\include\shape.h
+	"Position.h"
+	"Operation.h"
+
+1462721787 source:d:\git\c++\csg_project\src\circle.cpp
+	"Circle.h"
+	<math.h>
+	<cstdlib>
+
+1462812899 d:\git\c++\csg_project\include\circle.h
+	"Shape.h"
+	"Position.h"
+
+1462829343 source:d:\git\c++\csg_project\src\complexshape.cpp
+	"ComplexShape.h"
+
+1462829359 d:\git\c++\csg_project\include\complexshape.h
+	"Shape.h"
+	"Operation.h"
+
+1462721283 source:d:\git\c++\csg_project\src\position.cpp
+	"Position.h"
+
+1462721251 d:\git\c++\csg_project\include\position.h
+
+1462796219 source:d:\git\c++\csg_project\src\square.cpp
+	"Square.h"
+
+1462785243 d:\git\c++\csg_project\include\square.h
+	"Shape.h"
+	"Position.h"
+
