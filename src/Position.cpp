@@ -25,3 +25,18 @@ int Position::getY()
 {
     return this->y;
 }
+
+Position Position::operator+(Position & s)
+{
+    return Position(this->getX() + s.getX(), this->getY() + s.getY());
+}
+
+Position Position::operator-(Position & s)
+{
+    return Position(this->getX() - s.getX(), this->getY() - s.getY());
+}
+
+Position Position::operator*(int x)
+{
+    return Position(this->getX() * x, this->getY() * x);
+}

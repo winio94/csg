@@ -10,17 +10,29 @@ Shape::~Shape()
     //dtor
 }
 
-ComplexShape Shape::operator+(Shape * s)
+ComplexShape Shape::operator+(Shape &s)
 {
-    return ComplexShape(this, s, Operation::ADD);
+    return ComplexShape(this, &s, Operation::ADD);
 }
 
-ComplexShape Shape::operator-(Shape * s)
+ComplexShape Shape::operator-(Shape &s)
 {
-    return ComplexShape(this, s, Operation::SUB);
+    return ComplexShape(this, &s, Operation::SUB);
 }
 
-ComplexShape Shape::operator&(Shape * s)
+ComplexShape Shape::operator&(Shape &s)
 {
-    return ComplexShape(this, s, Operation::COMMON);
+    return ComplexShape(this, &s, Operation::COMMON);
+}
+
+Shape & Shape::operator+=(Position & position)
+{
+    this->position = this->position + position;
+
+    return *this;
+}
+
+Position Shape::getPosition()
+{
+    return this->position;
 }

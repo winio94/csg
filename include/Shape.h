@@ -11,13 +11,14 @@ class Shape
         Shape();
         virtual ~Shape();
         virtual bool isIn(Position * position) = 0;
-        ComplexShape operator+(Shape * s);
-        ComplexShape operator-(Shape * s);
-        ComplexShape operator&(Shape * s);
+        ComplexShape operator+(Shape & s);
+        ComplexShape operator-(Shape & s);
+        ComplexShape operator&(Shape & s);
+        Shape & operator+=(Position & position);
+        Position getPosition();
     protected:
         Operation operation;
         Position position;
-        Position getPosition();
         void setPosition(Position position);
     private:
 };

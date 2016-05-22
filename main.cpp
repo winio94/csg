@@ -49,6 +49,8 @@ int main()
 
     Circle circle1(Position(3,2), 7);
     Circle circle2(Position(-5, 4), 4);
+    //circle1 += A; TODO
+    //przesuwanie ksztaltow a potem komplex ksztaltow które przesuwaj¹ rekurencyjnie ksztatly o zadany wektor
     ComplexShape complexCircles(&circle1, &circle2, Operation::SUB);
     ComplexShape complexFromTwoComplexSub(&complexCircles,&coCommon, Operation::SUB);
     ComplexShape complexFromTwoComplexCommon(&complexCircles,&coCommon, Operation::COMMON);
@@ -60,26 +62,49 @@ int main()
 
     ///////////////////////////////OPERATORS AND SHAPES TEST//////////////////////////////////////////
 
-    ComplexShape complex11 = circle - &square;
+    ComplexShape complex11 = circle - square;
     cout << "11111111111111111111111111111111111111" << endl;
     cout << "Is point1 in complex11 : " << complex11.isIn( &point1)<<endl;
     cout << "Is point2 in complex11 : " << complex11.isIn( &point2)<<endl;
     cout << "Is point3 in complex11 : " << complex11.isIn( &point3)<<endl;
     cout << "Is point4 in complex11 : " << complex11.isIn( &point4)<<endl<<endl<<endl;
     cout << "11111111111111111111111111111111111111" << endl;
-    ComplexShape complex12 = circle & &square;
+    ComplexShape complex12 = circle & square;
     cout << "22222222222222222222222222222222222222" << endl;
     cout << "Is point1 in complex12 : " << complex12.isIn( &point1)<<endl;
     cout << "Is point2 in complex12 : " << complex12.isIn( &point2)<<endl;
     cout << "Is point3 in complex12 : " << complex12.isIn( &point3)<<endl;
     cout << "Is point4 in complex12 : " << complex12.isIn( &point4)<<endl<<endl<<endl;
     cout << "22222222222222222222222222222222222222" << endl;
-    ComplexShape complex13 = complex11 + &complex12;
+    ComplexShape complex13 = complex11 + complex12;
     cout << "33333333333333333333333333333333333333" << endl;
     cout << "Is point1 in complex13 : " << complex13.isIn( &point1)<<endl;
     cout << "Is point2 in complex13 : " << complex13.isIn( &point2)<<endl;
     cout << "Is point3 in complex13 : " << complex13.isIn( &point3)<<endl;
     cout << "Is point4 in complex13 : " << complex13.isIn( &point4)<<endl<<endl<<endl;
     cout << "33333333333333333333333333333333333333" << endl;
+
+    ///////////////////////////////OPERATORS ON POSITIONS//////////////////////////////////////////
+    cout << "Point A:  x=" << A.getX() << ", y=" <<A.getY() <<endl;
+    A = A * 5;
+    cout << "Point A:  x=" << A.getX() << ", y=" <<A.getY() <<endl<<endl<<endl;
+
+    cout << "Point A:  x=" << A.getX() << ", y=" <<A.getY() <<endl;
+    cout << "Point B:  x=" << B.getX() << ", y=" <<B.getY() <<endl;
+    B = B + A;
+    cout << "Point A:  x=" << A.getX() << ", y=" <<A.getY() <<endl;
+    cout << "Point B:  x=" << B.getX() << ", y=" <<B.getY() <<endl<<endl<<endl;
+
+    cout << "Point A:  x=" << A.getX() << ", y=" <<A.getY() <<endl;
+    cout << "Point B:  x=" << B.getX() << ", y=" <<B.getY() <<endl;
+    B = A - B;
+    cout << "Point A:  x=" << A.getX() << ", y=" <<A.getY() <<endl;
+    cout << "Point B:  x=" << B.getX() << ", y=" <<B.getY() <<endl;
+
+    ///////////////////////////////OPERATORS ON POSITIONS AND SHAPES//////////////////////////////////////////
+    cout << "circle position: ("<< circle1.getPosition().getX() << "," << circle1.getPosition().getY() << ")" <<endl;
+    circle1 += A;
+    cout << "circle position: ("<< circle1.getPosition().getX() << "," << circle1.getPosition().getY() << ")" <<endl;
+
     return 0;
 }

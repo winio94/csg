@@ -29,5 +29,11 @@ bool ComplexShape::isIn(Position * position)
     } else if(operation == Operation::SUB) {
         return (b1 && !b2);
     }
+
 }
 
+ComplexShape & ComplexShape::operator+=(Position & position)
+{
+    this->position = this->position + position;
+    return *this;
+}

@@ -14,6 +14,7 @@ class ComplexShape : public Shape
         ComplexShape(Shape * s1, Shape * s2, Operation operation);
         virtual ~ComplexShape();
         bool isIn(Position * position);
+        ComplexShape & operator+=(Position & position);
     protected:
 
     private:
