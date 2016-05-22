@@ -8,10 +8,9 @@ class Shape;
 class ComplexShape : public Shape
 {
     public:
-        Shape * s1;
-        Shape * s2;
-        ComplexShape();
-        ComplexShape(Shape * s1, Shape * s2, Operation operation);
+        Shape & s1;
+        Shape & s2;
+        ComplexShape(Shape & s1, Shape & s2, Operation operation);
         virtual ~ComplexShape();
         bool isIn(Position * position);
         ComplexShape & operator+=(Position & position);
