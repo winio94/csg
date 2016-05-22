@@ -10,9 +10,10 @@ class Position
         virtual ~Position();
         int getX();
         int getY();
-        Position operator+(Position & s);
-        Position operator-(Position & s);
+        Position operator+(Position & p);
+        Position operator-(Position & p);
         Position operator*(int x);
+        Position operator+=(Position & p);
     protected:
 
     private:

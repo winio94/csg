@@ -16,10 +16,10 @@ class Shape
         ComplexShape operator&(Shape & s);
         Shape & operator+=(Position & position);
         Position getPosition();
+        void setPosition(Position position);
     protected:
         Operation operation;
         Position position;
-        void setPosition(Position position);
     private:
 };
 

@@ -49,8 +49,7 @@ int main()
 
     Circle circle1(Position(3,2), 7);
     Circle circle2(Position(-5, 4), 4);
-    //circle1 += A; TODO
-    //przesuwanie ksztaltow a potem komplex ksztaltow które przesuwaj¹ rekurencyjnie ksztatly o zadany wektor
+    //przesuwanie ksztaltow a potem komplex ksztaltow ktÃ³re przesuwaja rekurencyjnie ksztatly o zadany wektor
     ComplexShape complexCircles(&circle1, &circle2, Operation::SUB);
     ComplexShape complexFromTwoComplexSub(&complexCircles,&coCommon, Operation::SUB);
     ComplexShape complexFromTwoComplexCommon(&complexCircles,&coCommon, Operation::COMMON);
@@ -105,6 +104,28 @@ int main()
     cout << "circle position: ("<< circle1.getPosition().getX() << "," << circle1.getPosition().getY() << ")" <<endl;
     circle1 += A;
     cout << "circle position: ("<< circle1.getPosition().getX() << "," << circle1.getPosition().getY() << ")" <<endl;
+
+
+
+    //////////////////////////////CHANGING POSITION OF COMPLEX SHAPE///////////////////////////////////////////
+
+    cout<<endl<< "CHANGING POSITION OF COMPLEX SHAPE"<<endl;
+    Position change(5, 5);
+    Circle c123(Position(-5, 4), 4);
+    Circle c321(Position(3, 2), 7);
+    ComplexShape fromCircles = c321 - c123;
+
+    Square s123(Position(1, 10), 6);
+    Square s321(Position(9, 10), 14);
+    ComplexShape fromSquares = s123 & s321;
+
+    ComplexShape fromComplexes = fromCircles & fromSquares;
+    fromComplexes += change;
+
+
+    //TO NIE DZIAÅA
+    //ComplexShape  fromCircles = Circle(Position(-5, 4), 4) + Circle(Position(3, 2), 7);
+
 
     return 0;
 }

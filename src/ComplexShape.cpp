@@ -1,5 +1,5 @@
 #include "ComplexShape.h"
-
+#include <iostream>
 ComplexShape::ComplexShape()
 {
     //ctor
@@ -34,6 +34,9 @@ bool ComplexShape::isIn(Position * position)
 
 ComplexShape & ComplexShape::operator+=(Position & position)
 {
-    this->position = this->position + position;
+    this->s1->setPosition(this->s1->getPosition() + position);
+    this->s2->setPosition(this->s2->getPosition() + position);
+    std::cout<<"Changing position in complex shape: "<<std::endl;
+    //this->position = this->position + position;
     return *this;
 }

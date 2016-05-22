@@ -36,3 +36,8 @@ Position Shape::getPosition()
 {
     return this->position;
 }
+
+void Shape::setPosition(Position position)
+{
+    this->position = position;
+}

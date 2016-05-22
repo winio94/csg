@@ -26,17 +26,22 @@ int Position::getY()
     return this->y;
 }
 
-Position Position::operator+(Position & s)
+Position Position::operator+(Position & p)
 {
-    return Position(this->getX() + s.getX(), this->getY() + s.getY());
+    return Position(this->getX() + p.getX(), this->getY() + p.getY());
 }
 
-Position Position::operator-(Position & s)
+Position Position::operator-(Position & p)
 {
-    return Position(this->getX() - s.getX(), this->getY() - s.getY());
+    return Position(this->getX() - p.getX(), this->getY() - p.getY());
 }
 
 Position Position::operator*(int x)
 {
     return Position(this->getX() * x, this->getY() * x);
+}
+
+Position Position::operator+=(Position & p)
+{
+    return Position(this->getX() + p.getX(), this->getY() + p.getY());
 }
